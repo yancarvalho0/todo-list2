@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="br.edu.ifsuldeminas.tarefas2.MainFragment"
+        android:label="@string/main_fragment_title"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_TaskFragment"
+            app:destination="@id/TaskFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_MainCategoryFragment"
+            app:destination="@id/MainCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/TaskFragment"
+        android:name="br.edu.ifsuldeminas.tarefas2.TaskFragment"
+        android:label="@string/task_fragment_title"
+        tools:layout="@layout/fragment_task">
+
+        <action
+            android:id="@+id/action_TaskFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/MainCategoryFragment"
+        android:name="br.edu.ifsuldeminas.tarefas2.MainCategoryFragment"
+        android:label="@string/category_fragment_title"
+        tools:layout="@layout/fragment_main_category">
+        <action
+            android:id="@+id/action_MainCategoryFragment_to_CategoryFragment"
+            app:destination="@id/CategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/CategoryFragment"
+        android:name="br.edu.ifsuldeminas.tarefas2.CategoryFragment"
+        android:label="@string/fragment_category_title"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_CategoryFragment_to_MainCategoryFragment"
+            app:destination="@id/MainCategoryFragment" />
+    </fragment>
+</navigation>
